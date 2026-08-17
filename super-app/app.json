@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "WEVSOCIAL",
+    "slug": "wevsocial-superapp",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#090D16"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    }
+  }
+}

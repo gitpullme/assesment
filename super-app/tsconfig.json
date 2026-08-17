@@ -3,7 +3,10 @@
     "target": "ES2022",
     "module": "commonjs",
     "jsx": "react-jsx",
-    "lib": ["ES2022", "DOM"],
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
@@ -23,5 +26,10 @@
     "outDir": "./dist",
     "rootDir": "./"
   },
-  "include": ["src/**/*", "test/**/*", "index.ts"]
+  "include": [
+    "src/**/*",
+    "test/**/*",
+    "index.ts"
+  ],
+  "extends": "expo/tsconfig.base"
 }
