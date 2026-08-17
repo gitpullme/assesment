@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: wevsocial_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: wev_admin
+      POSTGRES_PASSWORD: wev_super_secret_password_2026
+      POSTGRES_DB: wevsocial_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/migrations:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wev_admin -d wevsocial_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: wevsocial_backend
+    restart: always
+    environment:
+      PORT: 4000
+      DATABASE_URL: postgres://wev_admin:wev_super_secret_password_2026@postgres:5432/wevsocial_db
+      JWT_SECRET: wev_super_jwt_access_secret_key_32bytes_long_min_2026
+      JWT_REFRESH_SECRET: wev_super_jwt_refresh_secret_key_32bytes_long_min_2026
+      NODE_ENV: production
+    ports:
+      - "4000:4000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:

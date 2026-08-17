@@ -1,0 +1,44 @@
+{
+  "name": "wevsocial-superapp",
+  "version": "1.0.0",
+  "description": "WEVSOCIAL Super-App: Sandboxed Kernel, Injected SDK Bridge, Offline-First Sync State Machine, and Reference Mini-Apps",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "test": "ts-node test/superapp.test.ts"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.37.1",
+    "expo": "~51.0.0",
+    "expo-constants": "~16.0.1",
+    "expo-crypto": "~13.0.2",
+    "expo-linking": "~6.3.1",
+    "expo-router": "~3.5.14",
+    "expo-secure-store": "~13.0.2",
+    "expo-status-bar": "~1.12.1",
+    "lucide-react-native": "^0.379.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.74.1",
+    "react-native-gesture-handler": "~2.16.1",
+    "react-native-reanimated": "~3.10.1",
+    "react-native-safe-area-context": "4.10.1",
+    "react-native-screens": "3.31.1",
+    "react-native-svg": "15.2.0",
+    "react-native-web": "~0.19.10",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@types/node": "^20.12.12",
+    "@types/react": "~18.2.79",
+    "@types/react-dom": "~18.2.25",
+    "@types/react-native": "^0.73.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
